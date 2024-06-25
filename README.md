@@ -1,3 +1,13 @@
+# Anki-Connect Docker Container
+
+This is a fork from: The container is meant to serve as a service, so you can interface with anki-connect on port 8765. It differs from the original repository because it does not expect you to run it locally with your own anki-files. Instead everything is self-contained, including anki-connect and appropriate default settings.
+
+If you want to sync to webanki you need mount your own prefs21.db, as it contains the credentials for webanki. I will add an option to provide the file as a base64 encoded environment variable.
+
+The original readme:
+
+---
+
 # Anki Desktop
 
 This is inspired by the work of https://github.com/pnorcross/anki-desktop-docker , with a couple of modifications. This repo provides a Dockerfile using as a base image https://github.com/linuxserver/docker-baseimage-kasmvnc for the desktop version of Anki, which is useful for automating anki using addons like Anki-Connect and much needed when using the FSRS algorithm and also AnkiDroid, which does not support it. The app is accessible via a web interface bound to port 3000. The anki configuration is bound to a volume mounted at /config/app in the container. 
